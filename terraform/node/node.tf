@@ -15,7 +15,9 @@ resource "google_compute_instance" "k8s_node" {
     #!/bin/bash -ex
     export NfsPublicIp=${var.nfs_ip}
     export K3sPublicIp=${var.k3s_ip}
-    # TODO: interpolate script contents from root module
+    apt-get update
+    apt-get install -y docker.io 
+    docker run -d -p 80:80 httpd:2.4-alpine
     EOF
 
     network_interface {
