@@ -17,3 +17,5 @@ jobs:
         sudo install terrascan /usr/local/bin && rm terrascan
         cd terraform/
         terrascan scan -i helm
+        terrascan scan -i terraform -t gcp
+        terrascan scan -i terraform -t gcp -p .
