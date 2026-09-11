@@ -46,7 +46,7 @@ module "workers" {
 resource "google_compute_firewall" "cluster_fw" {
   name    = "cluster-firewall"
   network = "default"
-  source_ranges = ["0.0.0.0/0"]
+  source_ranges = ["10.0.0.0/8"]
 
   allow {
     protocol = "icmp"
